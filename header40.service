@@ -19,7 +19,7 @@ User=root
 # github에서 내려 받은 폴더를 기록하도록 한다.
 WorkingDirectory=/root/header40
 
-ExecStart=/bin/bash ./header40
+ExecStart=/bin/bash ./header40.sh
 ExecStartPre=/bin/sleep 5
 
 [Install]
