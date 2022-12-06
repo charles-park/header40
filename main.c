@@ -302,10 +302,7 @@ void boardGetData(void)
 	serialPutchar(serialHandle, txChar);
 
 	// serial rx get
-	rxChar = '?';
-	if (serialDataAvail(serialHandle)) {
-		rxChar = serialGetchar(serialHandle);
-	}
+	rxChar = serialGetchar(serialHandle);
 	serialFlush(serialHandle);
 
 	// stdout(console) display

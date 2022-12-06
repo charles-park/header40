@@ -4,5 +4,5 @@
 # chmod 755
 #
 # ODROID M1 (ttyS0), ODROID-C4 (ttyS1)
-./header40 -D /dev/ttyS0
+./header40 -D /dev/ttyS0 > /dev/null
 
