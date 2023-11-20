@@ -1,11 +1,20 @@
+#
+# Header40
+#
 CC      = gcc
 CFLAGS  = -W -Wall -g
 CFLAGS  += -D__DEBUG__
+CFLAGS  += -D__ODROID_M1S__
 
 INCLUDE = -I/usr/local/include
 LDFLAGS = -L/usr/local/lib -lpthread
 # LDLIBS  = -lwiringPi -lwiringPiDev -lpthread -lm -lrt -lcrypt -lgpiod
 LDLIBS  = $$(pkg-config --cflags --libs libwiringpi2)
+
+#
+# 기본적으로 Makefile은 indentation가 TAB 4로 설정되어있음.
+# Indentation이 space인 경우 아래 내용이 활성화 되어야 함.
+.RECIPEPREFIX +=
 
 # 폴더이름으로 실행파일 생성
 TARGET  := $(notdir $(shell pwd))
@@ -21,11 +30,11 @@ OBJS     = $(SRCS:.c=.o)
 all : $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) -o $@ $^ $(LDLIBS)
+    $(CC) -o $@ $^ $(LDLIBS)
 
 %.o: %.c
-	$(CC) -c $< -o $@ $(LDLIBS)
+    $(CC) -c $< -o $@ $(LDLIBS)
 
 clean :
-	rm -f $(OBJS)
-	rm -f $(TARGET)
+    rm -f $(OBJS)
+    rm -f $(TARGET)
