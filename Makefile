@@ -33,7 +33,7 @@ $(TARGET): $(OBJS)
     $(CC) -o $@ $^ $(LDLIBS)
 
 %.o: %.c
-    $(CC) -c $< -o $@ $(LDLIBS)
+    $(CC) $(CFLAGS) -c $< -o $@ $(LDLIBS)
 
 clean :
     rm -f $(OBJS)
