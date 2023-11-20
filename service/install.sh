@@ -1,8 +1,8 @@
 #!/bin/bash
-systemctl disable odroid-jig.service && sync
+systemctl disable header40.service && sync
 
-cp ./odroid-jig.service /etc/systemd/system/ && sync
+cp ./header40.service /etc/systemd/system/ && sync
 
-systemctl enable odroid-jig.service && sync
+systemctl enable header40.service && sync
 
-systemctl restart odroid-jig.service && sync
+systemctl restart header40.service && sync
